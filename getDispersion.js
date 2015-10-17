@@ -25,7 +25,7 @@ function main(){
 si = setInterval(function(){
   main()
   result = getRate()
-  if(result < 1700){
+  if(result < 1500){
     clearInterval(si)
   }
 },100)
