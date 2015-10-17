@@ -1,18 +1,10 @@
 function getSaveCode(){
-  return document.querySelector('.savedataIdCode').innerHTML
+  // return document.querySelector('.savedataIdCode').innerHTML
+  return $('.trainerIcon')[1].src
 }
 
 function moveNext(callback){
   document.querySelector('p.btnArrowRight').click()
-
-  // current_code = getSaveCode()
-  // si = setInterval(function(){
-  //   code = getSaveCode()
-  //   if(current_code != code){//when moved
-  //     clearInterval(si)
-  //     callback()
-  //   }
-  // },100)
 }
 
 function getRate(callback){
@@ -20,12 +12,13 @@ function getRate(callback){
   return Number(result)
 }
 
-rates = []
+rates = {}
 
 function main(){
   result = getRate()
-  console.log(result)
-  rates.push(result)
+  code = getSaveCode()
+  rates[code] = result
+  console.log(result,code)
   moveNext()
 }
 
